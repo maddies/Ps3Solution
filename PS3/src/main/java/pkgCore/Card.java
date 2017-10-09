@@ -6,11 +6,13 @@ public class Card implements Comparable {
 
 	private eSuit eSuit;
 	private eRank eRank;
+	private int iCardNbr;
 
-	public Card(pkgEnum.eSuit eSuit, pkgEnum.eRank eRank) {
+	public Card(pkgEnum.eSuit eSuit, pkgEnum.eRank eRank, int iCardNbr) {
 		super();
 		this.eSuit = eSuit;
 		this.eRank = eRank;
+		this.iCardNbr = iCardNbr;
 	}
 
 	public eRank geteRank() {
@@ -27,6 +29,15 @@ public class Card implements Comparable {
 
 	private void seteRank(eRank eRank) {
 		this.eRank = eRank;
+	}
+
+	protected int getiCardNbr() {
+		return iCardNbr;
+	}
+
+	@Override
+	public int hashCode() {
+		return iCardNbr;
 	}
 
 	@Override
